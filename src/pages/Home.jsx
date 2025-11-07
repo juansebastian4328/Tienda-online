@@ -1,6 +1,14 @@
+import { useEffect, useState } from "react";
+import opinions from "../data/opinion";
 
 const Home = () => {
-    console.log("Home renderizado");
+    
+    const [opinion, setOpinion] = useState([]);
+
+    useEffect(() => {
+        setOpinion(opinions);
+    }, []);
+
     return (
         <div>
             <section className="bg-gray-200 py-20 text-center">
@@ -35,8 +43,24 @@ const Home = () => {
                     <div className="bg-white shadow-lg rounded-lg p-4 text-center">
                         <img src="./public/erbapura.jpg" alt="perfume3" className="w-full h-56 object-cover rounded-md" />
                         <h3 className="text-lg font-medium mt-4">Erba pura xerjoff</h3>
-                        <p className="text-gray-500">$110.000</p>
+                        <p className="text-gray-500">$110.000</p>Compré un regalo para mi pareja y le encantó. La presentación es hermosa.
                     </div>
+                </div>
+            </section>
+
+            <section className="bg-gray-100 py-16 mt-16">
+                <h2 className="text-3xl font-bold mb-10">Opinions of our clients</h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {opinion.map((op) => (
+                        <div key={op.id} className="bg-white p-6 rounded-lg shadow-md">
+                            <h3 className="text-xl font-semibold mb-2">{op.name}</h3>
+                            <p className="text-gray-600 mb-4">"{op.text}"</p>
+                            <div className="text-yellow-400">
+                                {'★'.repeat(op.rating)}{'☆'.repeat(5 - op.rating)}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
 
