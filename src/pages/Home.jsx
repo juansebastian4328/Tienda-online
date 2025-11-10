@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import opinions from "../data/opinion";
+import Footer from "../components/Footer";
+import ContactForm from "../components/ContactForm";
 
 const Home = () => {
     
@@ -63,17 +65,10 @@ const Home = () => {
                     ))}
                 </div>
             </section>
-
-            <footer className="bg-black text-gray-300 py-10 text-center">
-                <h3 className="text-lg font-semibold mb-2">Perfumería Essence</h3>
-                <p className="text-sm mb-4">© {new Date().getFullYear()} Todos los derechos reservados</p>
-                <div className="flex justify-center gap-4">
-                    <a href="#" className="hover:text-white">Instagram</a>
-                    <a href="#" className="hover:text-white">Facebook</a>
-                    <a href="#" className="hover:text-white">Contacto</a>
-                </div>
-            </footer>
+            <ContactForm></ContactForm>
+            <Footer></Footer>
         </div>
+        
     )
 }
 
