@@ -66,8 +66,8 @@ const ContactForm = () => {
                                 <label className="block font-medium mb-2">Email:</label>
                                 <input
                                     type="email"
-                                    name="correo"
-                                    value={formData.correo}
+                                    name="email"
+                                    value={formData.email}
                                     onChange={handleChange}
                                     className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                                     placeholder="example@email.com"
