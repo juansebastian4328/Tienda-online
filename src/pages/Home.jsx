@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import opinions from "../data/opinion";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
+import ContactFormAdvanced from "../components/ContactFormAdvanced";
 
 const Home = () => {
     
@@ -65,7 +66,7 @@ const Home = () => {
                     ))}
                 </div>
             </section>
-            <ContactForm></ContactForm>
+            <ContactFormAdvanced></ContactFormAdvanced>
             <Footer></Footer>
         </div>
         
